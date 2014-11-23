@@ -1,0 +1,6 @@
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\bin\Debug\BackgroundSwitcher.exe.config
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\obj\Debug\BackgroundSwitcher.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\bin\Debug\BackgroundSwitcher.exe
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\bin\Debug\BackgroundSwitcher.pdb
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\obj\Debug\BackgroundSwitcher.exe
+C:\Users\andrew\Documents\GitHub\BackgroundSwitcher\BackgroundSwitcher\BackgroundSwitcher\obj\Debug\BackgroundSwitcher.pdb
