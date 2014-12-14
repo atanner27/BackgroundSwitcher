@@ -1,8 +1,8 @@
 //
 //  main.m
-//  BackgroundChangerMac
+//  BackgroundSwitcherMac
 //
-//  Created by AndrewT on 2014-12-11.
+//  Created by AndrewT on 2014-12-13.
 //  Copyright (c) 2014 AndrewT. All rights reserved.
 //
 

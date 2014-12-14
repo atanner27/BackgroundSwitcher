@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FDD3C3A1A3A2296000284C2"
-               BuildableName = "BackgroundChangerMac.app"
-               BlueprintName = "BackgroundChangerMac"
-               ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+               BlueprintIdentifier = "8F80E9C41A3D4E57003A326E"
+               BuildableName = "BackgroundSwitcherMac.app"
+               BlueprintName = "BackgroundSwitcherMac"
+               ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FDD3C501A3A2297000284C2"
-               BuildableName = "BackgroundChangerMacTests.xctest"
-               BlueprintName = "BackgroundChangerMacTests"
-               ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+               BlueprintIdentifier = "8F80E9D71A3D4E57003A326E"
+               BuildableName = "BackgroundSwitcherMacTests.xctest"
+               BlueprintName = "BackgroundSwitcherMacTests"
+               ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FDD3C501A3A2297000284C2"
-               BuildableName = "BackgroundChangerMacTests.xctest"
-               BlueprintName = "BackgroundChangerMacTests"
-               ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+               BlueprintIdentifier = "8F80E9D71A3D4E57003A326E"
+               BuildableName = "BackgroundSwitcherMacTests.xctest"
+               BlueprintName = "BackgroundSwitcherMacTests"
+               ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FDD3C3A1A3A2296000284C2"
-            BuildableName = "BackgroundChangerMac.app"
-            BlueprintName = "BackgroundChangerMac"
-            ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+            BlueprintIdentifier = "8F80E9C41A3D4E57003A326E"
+            BuildableName = "BackgroundSwitcherMac.app"
+            BlueprintName = "BackgroundSwitcherMac"
+            ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FDD3C3A1A3A2296000284C2"
-            BuildableName = "BackgroundChangerMac.app"
-            BlueprintName = "BackgroundChangerMac"
-            ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+            BlueprintIdentifier = "8F80E9C41A3D4E57003A326E"
+            BuildableName = "BackgroundSwitcherMac.app"
+            BlueprintName = "BackgroundSwitcherMac"
+            ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FDD3C3A1A3A2296000284C2"
-            BuildableName = "BackgroundChangerMac.app"
-            BlueprintName = "BackgroundChangerMac"
-            ReferencedContainer = "container:BackgroundChangerMac.xcodeproj">
+            BlueprintIdentifier = "8F80E9C41A3D4E57003A326E"
+            BuildableName = "BackgroundSwitcherMac.app"
+            BlueprintName = "BackgroundSwitcherMac"
+            ReferencedContainer = "container:BackgroundSwitcherMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

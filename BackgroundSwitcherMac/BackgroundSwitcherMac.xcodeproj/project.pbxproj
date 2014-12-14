@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F80E9CC1A3D4E57003A326E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E9CB1A3D4E57003A326E /* AppDelegate.m */; };
+		8F80E9CE1A3D4E57003A326E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E9CD1A3D4E57003A326E /* main.m */; };
+		8F80E9D01A3D4E57003A326E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9CF1A3D4E57003A326E /* Images.xcassets */; };
+		8F80E9D31A3D4E57003A326E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9D11A3D4E57003A326E /* MainMenu.xib */; };
+		8F80E9DF1A3D4E57003A326E /* BackgroundSwitcherMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E9DE1A3D4E57003A326E /* BackgroundSwitcherMacTests.m */; };
+		8F80E9E91A3D4F7A003A326E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9E81A3D4F7A003A326E /* icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F80E9D91A3D4E57003A326E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F80E9BD1A3D4E57003A326E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F80E9C41A3D4E57003A326E;
+			remoteInfo = BackgroundSwitcherMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8F80E9C51A3D4E57003A326E /* BackgroundSwitcherMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundSwitcherMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F80E9C91A3D4E57003A326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F80E9CA1A3D4E57003A326E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F80E9CB1A3D4E57003A326E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F80E9CD1A3D4E57003A326E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F80E9CF1A3D4E57003A326E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8F80E9D21A3D4E57003A326E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8F80E9D81A3D4E57003A326E /* BackgroundSwitcherMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackgroundSwitcherMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F80E9DD1A3D4E57003A326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F80E9DE1A3D4E57003A326E /* BackgroundSwitcherMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundSwitcherMacTests.m; sourceTree = "<group>"; };
+		8F80E9E81A3D4F7A003A326E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F80E9C21A3D4E57003A326E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F80E9D51A3D4E57003A326E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F80E9BC1A3D4E57003A326E = {
+			isa = PBXGroup;
+			children = (
+				8F80E9C71A3D4E57003A326E /* BackgroundSwitcherMac */,
+				8F80E9DB1A3D4E57003A326E /* BackgroundSwitcherMacTests */,
+				8F80E9C61A3D4E57003A326E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F80E9C61A3D4E57003A326E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E9C51A3D4E57003A326E /* BackgroundSwitcherMac.app */,
+				8F80E9D81A3D4E57003A326E /* BackgroundSwitcherMacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F80E9C71A3D4E57003A326E /* BackgroundSwitcherMac */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E9CA1A3D4E57003A326E /* AppDelegate.h */,
+				8F80E9CB1A3D4E57003A326E /* AppDelegate.m */,
+				8F80E9E81A3D4F7A003A326E /* icon.png */,
+				8F80E9CF1A3D4E57003A326E /* Images.xcassets */,
+				8F80E9D11A3D4E57003A326E /* MainMenu.xib */,
+				8F80E9C81A3D4E57003A326E /* Supporting Files */,
+			);
+			path = BackgroundSwitcherMac;
+			sourceTree = "<group>";
+		};
+		8F80E9C81A3D4E57003A326E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E9C91A3D4E57003A326E /* Info.plist */,
+				8F80E9CD1A3D4E57003A326E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F80E9DB1A3D4E57003A326E /* BackgroundSwitcherMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E9DE1A3D4E57003A326E /* BackgroundSwitcherMacTests.m */,
+				8F80E9DC1A3D4E57003A326E /* Supporting Files */,
+			);
+			path = BackgroundSwitcherMacTests;
+			sourceTree = "<group>";
+		};
+		8F80E9DC1A3D4E57003A326E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E9DD1A3D4E57003A326E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F80E9C41A3D4E57003A326E /* BackgroundSwitcherMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F80E9E21A3D4E57003A326E /* Build configuration list for PBXNativeTarget "BackgroundSwitcherMac" */;
+			buildPhases = (
+				8F80E9C11A3D4E57003A326E /* Sources */,
+				8F80E9C21A3D4E57003A326E /* Frameworks */,
+				8F80E9C31A3D4E57003A326E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackgroundSwitcherMac;
+			productName = BackgroundSwitcherMac;
+			productReference = 8F80E9C51A3D4E57003A326E /* BackgroundSwitcherMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F80E9D71A3D4E57003A326E /* BackgroundSwitcherMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F80E9E51A3D4E57003A326E /* Build configuration list for PBXNativeTarget "BackgroundSwitcherMacTests" */;
+			buildPhases = (
+				8F80E9D41A3D4E57003A326E /* Sources */,
+				8F80E9D51A3D4E57003A326E /* Frameworks */,
+				8F80E9D61A3D4E57003A326E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F80E9DA1A3D4E57003A326E /* PBXTargetDependency */,
+			);
+			name = BackgroundSwitcherMacTests;
+			productName = BackgroundSwitcherMacTests;
+			productReference = 8F80E9D81A3D4E57003A326E /* BackgroundSwitcherMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F80E9BD1A3D4E57003A326E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = AndrewT;
+				TargetAttributes = {
+					8F80E9C41A3D4E57003A326E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8F80E9D71A3D4E57003A326E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8F80E9C41A3D4E57003A326E;
+					};
+				};
+			};
+			buildConfigurationList = 8F80E9C01A3D4E57003A326E /* Build configuration list for PBXProject "BackgroundSwitcherMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F80E9BC1A3D4E57003A326E;
+			productRefGroup = 8F80E9C61A3D4E57003A326E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F80E9C41A3D4E57003A326E /* BackgroundSwitcherMac */,
+				8F80E9D71A3D4E57003A326E /* BackgroundSwitcherMacTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F80E9C31A3D4E57003A326E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F80E9D01A3D4E57003A326E /* Images.xcassets in Resources */,
+				8F80E9D31A3D4E57003A326E /* MainMenu.xib in Resources */,
+				8F80E9E91A3D4F7A003A326E /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F80E9D61A3D4E57003A326E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F80E9C11A3D4E57003A326E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F80E9CE1A3D4E57003A326E /* main.m in Sources */,
+				8F80E9CC1A3D4E57003A326E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F80E9D41A3D4E57003A326E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F80E9DF1A3D4E57003A326E /* BackgroundSwitcherMacTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F80E9DA1A3D4E57003A326E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F80E9C41A3D4E57003A326E /* BackgroundSwitcherMac */;
+			targetProxy = 8F80E9D91A3D4E57003A326E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F80E9D11A3D4E57003A326E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F80E9D21A3D4E57003A326E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F80E9E01A3D4E57003A326E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8F80E9E11A3D4E57003A326E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8F80E9E31A3D4E57003A326E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BackgroundSwitcherMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8F80E9E41A3D4E57003A326E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BackgroundSwitcherMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8F80E9E61A3D4E57003A326E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BackgroundSwitcherMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackgroundSwitcherMac.app/Contents/MacOS/BackgroundSwitcherMac";
+			};
+			name = Debug;
+		};
+		8F80E9E71A3D4E57003A326E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BackgroundSwitcherMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackgroundSwitcherMac.app/Contents/MacOS/BackgroundSwitcherMac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F80E9C01A3D4E57003A326E /* Build configuration list for PBXProject "BackgroundSwitcherMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F80E9E01A3D4E57003A326E /* Debug */,
+				8F80E9E11A3D4E57003A326E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F80E9E21A3D4E57003A326E /* Build configuration list for PBXNativeTarget "BackgroundSwitcherMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F80E9E31A3D4E57003A326E /* Debug */,
+				8F80E9E41A3D4E57003A326E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8F80E9E51A3D4E57003A326E /* Build configuration list for PBXNativeTarget "BackgroundSwitcherMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F80E9E61A3D4E57003A326E /* Debug */,
+				8F80E9E71A3D4E57003A326E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F80E9BD1A3D4E57003A326E /* Project object */;
+}

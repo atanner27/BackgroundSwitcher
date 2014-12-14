@@ -1,19 +1,19 @@
 //
-//  BackgroundChangerMacTests.m
-//  BackgroundChangerMacTests
+//  BackgroundSwitcherMacTests.m
+//  BackgroundSwitcherMacTests
 //
-//  Created by AndrewT on 2014-12-11.
+//  Created by AndrewT on 2014-12-13.
 //  Copyright (c) 2014 AndrewT. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 
-@interface BackgroundChangerMacTests : XCTestCase
+@interface BackgroundSwitcherMacTests : XCTestCase
 
 @end
 
-@implementation BackgroundChangerMacTests
+@implementation BackgroundSwitcherMacTests
 
 - (void)setUp {
     [super setUp];

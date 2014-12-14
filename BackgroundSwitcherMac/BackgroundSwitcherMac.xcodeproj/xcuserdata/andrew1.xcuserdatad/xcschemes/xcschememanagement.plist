@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BackgroundChangerMac.xcscheme</key>
+		<key>BackgroundSwitcherMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8FDD3C3A1A3A2296000284C2</key>
+		<key>8F80E9C41A3D4E57003A326E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FDD3C501A3A2297000284C2</key>
+		<key>8F80E9D71A3D4E57003A326E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
