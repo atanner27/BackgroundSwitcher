@@ -32,6 +32,14 @@
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
+    
+    
+    //set up timer
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(setWallpaper)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 - (IBAction)doSomething:(id)sender
 {
