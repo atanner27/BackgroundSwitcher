@@ -18,6 +18,7 @@
 }
 
 - (IBAction)doSomething:(id)sender;
+-(void)setWallpaper;
 
 @property (assign) IBOutlet NSWindow * window;
 
