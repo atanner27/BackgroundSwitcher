@@ -17,6 +17,7 @@
     
 }
 
+-(int)getRandomNumberBetween:(int)from to:(int)to;
 - (IBAction)doSomething:(id)sender;
 -(void)setWallpaper;
 
