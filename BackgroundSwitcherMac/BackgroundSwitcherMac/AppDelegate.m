@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "OptionsWindowcontroller.h"
 @interface AppDelegate ()
 
 @end
@@ -94,8 +94,13 @@
 - (IBAction)doSomethingElse:(id)sender
 {
     NSLog(@"is doing something");
-    [self setWallpaper];
+    //[self setWallpaper];
     
+    /*ViewControllerMonitorMenu *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerMonitorMenu"];
+     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+     */
+
+    //[NSApplication presentViewController:OptionsWindowcontroller animated:YES ^{}];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
