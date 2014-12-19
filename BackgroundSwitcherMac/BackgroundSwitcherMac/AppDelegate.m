@@ -18,6 +18,8 @@
 
 - (void) awakeFromNib{
     
+    [self callUrl];
+    
     //statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength]]
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -35,7 +37,7 @@
     
     
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:2.0
+    [NSTimer scheduledTimerWithTimeInterval:10.0
                                      target:self
                                    selector:@selector(setWallpaper)
                                    userInfo:nil
@@ -114,5 +116,58 @@
     
     return (int)from + arc4random() % (to-from+1);
 }
+
+-(void)callUrl
+{
+//just give your URL instead of my URL
+NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:@"http://www.reddit.com/r/earthporn/hot.json"]];
+
+[request setHTTPMethod:@"GET"];
+
+[request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"content-type"];
+
+NSError *err;
+
+NSURLResponse *response;
+
+NSData *responseData = [NSURLConnection sendSynchronousRequest:request   returningResponse:&response error:&err];
+
+//You need to check response.Once you get the response copy that and paste in ONLINE JSON VIEWER.If you do this clearly you can get the correct results.
+
+//After that it depends upon the json format whether it is DICTIONARY or ARRAY
+
+NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error: &err];
+
+    //NSLog(jsonArray);
+    
+    NSArray *array=[[jsonArray objectForKey:@"data"]objectForKey:@"children"];
+    //start parsing it down
+    NSDictionary * testing = [jsonArray objectForKey:@"sadas"];
+    
+    //NSArray * smallerArray = [array objectForKey:@"sda"];
+    for (NSDictionary * groupDic in array) {
+    
+        NSArray *dataObjs = [groupDic objectForKey:@"data"];
+        
+        
+        //NSLog([groupDic objectForKey:@"data"]);
+        for(NSDictionary * currentPost in dataObjs)
+        {
+            
+            NSLog(@"%@", [currentPost objectForKey:@"url"]);
+                   
+            //NSLog(currentPost.)
+        }
+        
+        
+    }
+    /*for (NSString* currentString in array)
+    {
+        NSLog(currentString);
+    }*/
+    
+    
+}
+
 
 @end
