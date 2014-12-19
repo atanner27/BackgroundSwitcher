@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "OptionsWindowcontroller.h"
 @interface AppDelegate ()
+{
+    NSMutableArray * urlList;
+}
 
 @end
 
@@ -42,12 +45,24 @@
     [self callReddit];
     
     //once have the list of images
-    
+    NSInteger index = 0;
+    for(NSString * curString in urlList)
+    {
+        //create a key value mapping with the url as the key and the imagename as value
+        NSMutableString * imageName = [NSMutableString stringWithFormat:@"image%ld", (long)index];
+        [imageName appendFormat:@".png"];
+        //Save all of the local images
+        //[self saveImageInLocalDirectory:curString filename: imageName ];
+        index++;
+    }
     //Must download the files to temp
-    
+    //[self saveImageInLocalDirectory ];
     //dont knwo if should be giving it current image url
     //or if should be giving it the whole structure
     
+    
+    
+    //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
     [NSTimer scheduledTimerWithTimeInterval:2.0
@@ -143,6 +158,35 @@
     return (int)from + arc4random() % (to-from+1);
 }
 
+-(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName
+{
+    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *imgName = fileName;
+    NSString *imgURL = url;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *writablePath = [documentsDirectoryPath stringByAppendingPathComponent:imgName];
+    
+    if(![fileManager fileExistsAtPath:writablePath]){
+        // file doesn't exist
+        NSLog(@"file doesn't exist");
+        //save Image From URL
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString: imgURL]];
+        
+        NSError *error = nil;
+        [data writeToFile:[documentsDirectoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", imgName]] options:NSAtomicWrite error:&error];
+        
+        if (error) {
+            NSLog(@"Error Writing File : %@",error);
+        }else{
+            NSLog(@"Image %@ Saved SuccessFully",imgName);
+        }
+    }
+    else{
+        // file exist
+        NSLog(@"file exist");
+    }
+}
+
 -(void)callReddit
 {
 //just give your URL instead of my URL
@@ -151,7 +195,7 @@ NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWith
 [request setHTTPMethod:@"GET"];
 
 [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"content-type"];
-
+[request setValue:@"BackgroundSwitcher Agent" forHTTPHeaderField:@"User-Agent"];
 NSError *err;
 
 NSURLResponse *response;
@@ -183,6 +227,8 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
             NSLog(@"string does not contain bla");
         } else {
             //from imgur. use it
+            //Add the url to the global list
+            [urlList addObject:url];
             NSLog(@"string contains bla!");
         }
         
