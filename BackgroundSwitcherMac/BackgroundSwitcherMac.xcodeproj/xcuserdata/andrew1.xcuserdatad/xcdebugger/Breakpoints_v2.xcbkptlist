@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "440630941.33526"
+            timestampString = "440658132.46422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-callUrl"
             landmarkType = "5">
          </BreakpointContent>
@@ -22,47 +22,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "440656136.129904"
+            timestampString = "440658132.46422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "-callUrl"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate callUrl]"
-                  moduleName = "BackgroundSwitcherMac"
-                  urlString = "file:///Users/andrew1/Documents/PersonalProjects/BackgroundSwitcher/BackgroundSwitcherMac/BackgroundSwitcherMac/AppDelegate.m"
-                  timestampString = "440656136.404688"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "1613">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate callUrl]"
-                  moduleName = "BackgroundSwitcherMac"
-                  urlString = "file:///Users/andrew1/Documents/PersonalProjects/BackgroundSwitcher/BackgroundSwitcherMac/BackgroundSwitcherMac/AppDelegate.m"
-                  timestampString = "440656136.404965"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "1757">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/AppDelegate.m"
+            timestampString = "440658132.46422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-giveRandomImage"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

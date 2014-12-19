@@ -18,7 +18,9 @@
 
 - (void) awakeFromNib{
     
-    [self callUrl];
+    //Load up from config files
+    
+    
     
     //statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength]]
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -35,13 +37,25 @@
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
     
+    //Make the reddit calls to buld up list of images
+    //Need to expand to multiple subreddits
+    [self callReddit];
     
+    //once have the list of images
+    
+    //Must download the files to temp
+    
+    //dont knwo if should be giving it current image url
+    //or if should be giving it the whole structure
+    
+    //if number of images left to be cycled through is  > 4
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:10.0
+    [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(setWallpaper)
                                    userInfo:nil
                                     repeats:YES];
+    
 }
 - (IBAction)doSomething:(id)sender
 {
@@ -68,19 +82,12 @@
         
         [[[NSWorkspace sharedWorkspace] desktopImageOptionsForScreen:curScreen] mutableCopy];
         //NSURL *url = @"";
-        int randomNumber = [self getRandomNumberBetween:1 to:2];
-        NSString * imageName = @"";
-        NSLog([NSString stringWithFormat:@"%d", randomNumber] );
-        if(randomNumber == 1)
-        {
-           imageName = @"back1";
-        }
-        else
-        {
-           imageName = @"back2";
-        }
-        NSURL *url = [[NSBundle mainBundle] URLForResource:imageName withExtension:@"jpg"];
+         NSURL *url = [[NSURL alloc] initWithString:@"http://i.imgur.com/oafDaqu.jpg"];
+        
         //NSURL *imageURL = [[NSWorkspace sharedWorkspace] desktopImageURLForScreen:curScreen];
+        
+        //Use reddit url
+        
         if (![[NSWorkspace sharedWorkspace] setDesktopImageURL:url
                                                      forScreen:curScreen
                                                        options:screenOptions
@@ -92,6 +99,25 @@
         
     }
 }
+
+-(NSURL *)giveRandomImage
+{
+    int randomNumber = [self getRandomNumberBetween:1 to:2];
+    NSString * imageName = @"";
+    //NSLog([NSString stringWithFormat:@"%d", randomNumber] );
+    if(randomNumber == 1)
+    {
+        imageName = @"back1";
+    }
+    else
+    {
+        imageName = @"back2";
+    }
+    NSURL *url = [[NSBundle mainBundle] URLForResource:imageName withExtension:@"jpg"];
+    
+    return url;
+}
+
 
 - (IBAction)doSomethingElse:(id)sender
 {
@@ -117,7 +143,7 @@
     return (int)from + arc4random() % (to-from+1);
 }
 
--(void)callUrl
+-(void)callReddit
 {
 //just give your URL instead of my URL
 NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:@"http://www.reddit.com/r/earthporn/hot.json"]];
@@ -145,26 +171,22 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     NSDictionary * testing = [jsonArray objectForKey:@"sadas"];
     
     //NSArray * smallerArray = [array objectForKey:@"sda"];
+    //each element of the array is a post
     for (NSDictionary * groupDic in array) {
     
         NSArray *dataObjs = [groupDic objectForKey:@"data"];
+        NSDictionary *dict = [groupDic objectForKey:@"data"];
+        NSString * url = [dict objectForKey:@"url"];
         
-        
-        //NSLog([groupDic objectForKey:@"data"]);
-        for(NSDictionary * currentPost in dataObjs)
-        {
-            
-            NSLog(@"%@", [currentPost objectForKey:@"url"]);
-                   
-            //NSLog(currentPost.)
+        if ([url rangeOfString:@"imgur"].location == NSNotFound) {
+            //Not from imgur
+            NSLog(@"string does not contain bla");
+        } else {
+            //from imgur. use it
+            NSLog(@"string contains bla!");
         }
         
-        
     }
-    /*for (NSString* currentString in array)
-    {
-        NSLog(currentString);
-    }*/
     
     
 }
