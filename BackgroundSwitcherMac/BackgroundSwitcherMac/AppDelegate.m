@@ -11,6 +11,8 @@
 @interface AppDelegate ()
 {
     NSMutableArray * urlList;
+    NSMutableDictionary * finalUrlList;
+    
 }
 
 @end
@@ -20,7 +22,9 @@
 @synthesize window;
 
 - (void) awakeFromNib{
-    
+    //data
+    urlList = [NSMutableArray new];
+    finalUrlList = [NSMutableDictionary new];
     //Load up from config files
     
     
@@ -51,8 +55,11 @@
         //create a key value mapping with the url as the key and the imagename as value
         NSMutableString * imageName = [NSMutableString stringWithFormat:@"image%ld", (long)index];
         [imageName appendFormat:@".png"];
+        
+        //[finalUrlList setObject:imageName forKey:curString];
+        [finalUrlList setObject:imageName forKey:curString];
         //Save all of the local images
-        //[self saveImageInLocalDirectory:curString filename: imageName ];
+        [self saveImageInLocalDirectory:curString filename: imageName ];
         index++;
     }
     //Must download the files to temp
@@ -67,7 +74,7 @@
     //set up timer
     [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
-                                   selector:@selector(setWallpaper)
+                                   selector:@selector(wallpaperTimer)
                                    userInfo:nil
                                     repeats:YES];
     
@@ -79,7 +86,86 @@
     [self setWallpaper];
 }
 
--(void)setWallpaper
+-(NSURL*) getFileUrl:(NSString *) fileName
+{
+    //NSString *filename = @"whatever you've saved your filename as";
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+    NSString *documentsDirectory = [pathArray objectAtIndex:0];
+    NSString *yourSoundPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:yourSoundPath])
+    {
+        NSURL *soundURL = [NSURL fileURLWithPath:yourSoundPath isDirectory:NO];
+        return soundURL;
+    }
+    
+    return nil;
+}
+
+-(void) deleteFile
+{
+    
+}
+
+-(void)wallpaperTimer
+{
+    NSString * curImageName;
+    NSURL * curImagePath;
+    NSString * curKey;
+    NSString * curValue;
+    //grab a local image url
+    if ([finalUrlList allKeys] > 0)
+    {
+        /*NSArray *temp = [dict allKeysForObject:knownObject];
+         NSString *key = [temp lastObject];*/
+        //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+        curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+        NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
+        
+        NSArray *temp = [finalUrlList allKeysForObject:curValue];
+        curKey = [temp lastObject];
+        
+        curValue = [finalUrlList objectForKey:curKey];
+        //curValue = [finalUrlList objectforVal:curKey];
+        //curImagePath [NSurl fileU  documentsDirectory]
+        //NSString * test = NSDocumentDirectory;
+        curImagePath = [self getFileUrl:curValue];
+        //If it is nill, try a new image
+        
+        [self setWallpaper: curImagePath];
+        
+        //remove the current used wallpaper
+        //NEED TO BE BUILT
+        [self deleteFile];
+        
+        [finalUrlList removeObjectForKey:curKey];
+        
+    }
+    /*  //save Image From URL
+     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString: imgURL]];
+     [NSURL fileURLWithPath: documentsDirectory]
+     NSError *error = nil;
+     [data writeToFile:[documentsDirectoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", imgName]] options:NSAtomicWrite error:&error];*/
+    
+    //[imageName appendFormat:@".png"];
+    //NSURL *url = @"";
+    //NSURL *url = [[NSURL alloc] initWithString:@"http://i.imgur.com/oafDaqu.jpg"];
+    /*NSString *filename = @"whatever you've saved your filename as";
+     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+     NSString *documentsDirectory = [pathArray objectAtIndex:0];
+     NSString *yourSoundPath = [documentsDirectory stringByAppendingPathComponent:filename];
+     
+     if ([[NSFileManager defaultManager] fileExistsAtPath:soundPath])
+     {
+     NSURL *soundURL = [NSURL fileURLWithPath:soundPath isDirectory:NO];
+     }
+     */
+    
+    
+}
+
+
+-(void)setWallpaper:(NSURL *) imageUrl
 {
     NSImage * backImage;
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -96,14 +182,13 @@
         NSMutableDictionary *screenOptions =
         
         [[[NSWorkspace sharedWorkspace] desktopImageOptionsForScreen:curScreen] mutableCopy];
-        //NSURL *url = @"";
-         NSURL *url = [[NSURL alloc] initWithString:@"http://i.imgur.com/oafDaqu.jpg"];
+       
         
         //NSURL *imageURL = [[NSWorkspace sharedWorkspace] desktopImageURLForScreen:curScreen];
         
         //Use reddit url
         
-        if (![[NSWorkspace sharedWorkspace] setDesktopImageURL:url
+        if (![[NSWorkspace sharedWorkspace] setDesktopImageURL:imageUrl
                                                      forScreen:curScreen
                                                        options:screenOptions
                                                          error:&error])
@@ -229,6 +314,8 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
             //from imgur. use it
             //Add the url to the global list
             [urlList addObject:url];
+            //[finalUrlList insertValue:url inPropertyWithKey:@"1234"];
+            //[finalUrlList setObject:url forKey:url];
             NSLog(@"string contains bla!");
         }
         
