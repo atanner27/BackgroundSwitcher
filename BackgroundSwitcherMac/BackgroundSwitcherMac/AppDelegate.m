@@ -133,6 +133,7 @@
     NSString * curKey;
     NSString * curValue;
     //grab a local image url
+     NSLog(@"in wallpapper timer, just before if index");
     if ([finalUrlList allKeys] > 0)
     {
         /*NSArray *temp = [dict allKeysForObject:knownObject];
@@ -162,26 +163,6 @@
         [finalUrlList removeObjectForKey:curKey];
         
     }
-    /*  //save Image From URL
-     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString: imgURL]];
-     [NSURL fileURLWithPath: documentsDirectory]
-     NSError *error = nil;
-     [data writeToFile:[documentsDirectoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", imgName]] options:NSAtomicWrite error:&error];*/
-    
-    //[imageName appendFormat:@".png"];
-    //NSURL *url = @"";
-    //NSURL *url = [[NSURL alloc] initWithString:@"http://i.imgur.com/oafDaqu.jpg"];
-    /*NSString *filename = @"whatever you've saved your filename as";
-     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
-     NSString *documentsDirectory = [pathArray objectAtIndex:0];
-     NSString *yourSoundPath = [documentsDirectory stringByAppendingPathComponent:filename];
-     
-     if ([[NSFileManager defaultManager] fileExistsAtPath:soundPath])
-     {
-     NSURL *soundURL = [NSURL fileURLWithPath:soundPath isDirectory:NO];
-     }
-     */
-    
     
 }
 
@@ -189,10 +170,10 @@
 -(void)setWallpaper:(NSURL *) imageUrl
 {
     NSLog(@"inside set wallpaper");
-    NSImage * backImage;
-    NSBundle * bundle = [NSBundle mainBundle ];
+    //NSImage * backImage;
+    //NSBundle * bundle = [NSBundle mainBundle ];
     
-    backImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"back1" ofType:@"jpg"]];
+    //backImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"back1" ofType:@"jpg"]];
     
     NSArray *screens = [NSScreen screens];
     NSScreen *curScreen;
@@ -209,6 +190,10 @@
         //NSURL *imageURL = [[NSWorkspace sharedWorkspace] desktopImageURLForScreen:curScreen];
         
         //Use reddit url
+        NSLog(@"inside set wallpaper image url is:%@", imageUrl);
+        
+        ///using this still works to set
+        //imageUrl = [self giveRandomImage];
         
         if (![[NSWorkspace sharedWorkspace] setDesktopImageURL:imageUrl
                                                      forScreen:curScreen
@@ -262,6 +247,8 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+    
+    //write out preferences to config file
 }
 
 -(int)getRandomNumberBetween:(int)from to:(int)to {
