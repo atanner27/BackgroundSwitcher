@@ -52,8 +52,15 @@
     NSInteger index = 0;
     for(NSString * curString in urlList)
     {
+        //split out the unique imgur tag
+        NSArray *array = [curString componentsSeparatedByString:@"/"];
+        NSString * split = array[3];
+        array = [split componentsSeparatedByString:@"."];
+        split = array[0];
+        
+        //NSLog(array[3]);
         //create a key value mapping with the url as the key and the imagename as value
-        NSMutableString * imageName = [NSMutableString stringWithFormat:@"image%ld", (long)index];
+        NSMutableString * imageName = [NSMutableString stringWithFormat:@"%@", split];
         [imageName appendFormat:@".png"];
         
         //[finalUrlList setObject:imageName forKey:curString];
@@ -102,9 +109,21 @@
     return nil;
 }
 
--(void) deleteFile
+-(void) deleteFile:(NSString *) imgName
 {
+    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSError * error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+   
+    NSString *writablePath = [documentsDirectoryPath stringByAppendingPathComponent:imgName];
     
+    BOOL result  = [fileManager removeItemAtPath:writablePath error:&error];
+    //NSLog([NSString stringWithFormat:@"@" ]);
+    NSLog(result ? @"Yes removed file" : @"No, did not remove file");
+    if(error)
+    {
+        NSLog(@"there was an error removing file:%@", error);
+    }
 }
 
 -(void)wallpaperTimer
@@ -132,11 +151,13 @@
         curImagePath = [self getFileUrl:curValue];
         //If it is nill, try a new image
         
+        NSLog(@"before setting, path is:%@", curImagePath);
         [self setWallpaper: curImagePath];
         
         //remove the current used wallpaper
         //NEED TO BE BUILT
-        [self deleteFile];
+        
+        [self deleteFile:curValue];
         
         [finalUrlList removeObjectForKey:curKey];
         
@@ -167,6 +188,7 @@
 
 -(void)setWallpaper:(NSURL *) imageUrl
 {
+    NSLog(@"inside set wallpaper");
     NSImage * backImage;
     NSBundle * bundle = [NSBundle mainBundle ];
     
@@ -194,6 +216,10 @@
                                                          error:&error])
         {
             //Give an error message/ try dif background?
+            if(error)
+            {
+                NSLog(@"there was an error:%@", error);
+            }
             //[self presentError:error];
         }
         
