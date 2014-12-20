@@ -33,7 +33,7 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
     
-    statusImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"icon" ofType:@"png"]];
+    statusImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"picture11" ofType:@"png"]];
     
     [statusItem setImage:statusImage];
     NSMenu *menu = [[NSMenu alloc] init];
@@ -134,34 +134,40 @@
     NSString * curValue;
     //grab a local image url
      NSLog(@"in wallpapper timer, just before if index");
-    if ([finalUrlList allKeys] > 0)
+    if(finalUrlList != nil)
     {
-        /*NSArray *temp = [dict allKeysForObject:knownObject];
-         NSString *key = [temp lastObject];*/
-        //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-        curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-        NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
-        
-        NSArray *temp = [finalUrlList allKeysForObject:curValue];
-        curKey = [temp lastObject];
-        
-        curValue = [finalUrlList objectForKey:curKey];
-        //curValue = [finalUrlList objectforVal:curKey];
-        //curImagePath [NSurl fileU  documentsDirectory]
-        //NSString * test = NSDocumentDirectory;
-        curImagePath = [self getFileUrl:curValue];
-        //If it is nill, try a new image
-        
-        NSLog(@"before setting, path is:%@", curImagePath);
-        [self setWallpaper: curImagePath];
-        
-        //remove the current used wallpaper
-        //NEED TO BE BUILT
-        
-        [self deleteFile:curValue];
-        
-        [finalUrlList removeObjectForKey:curKey];
-        
+        if ([finalUrlList allKeys] > 0)
+        {
+            /*NSArray *temp = [dict allKeysForObject:knownObject];
+             NSString *key = [temp lastObject];*/
+            //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+            curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+            NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
+            
+            NSArray *temp = [finalUrlList allKeysForObject:curValue];
+            curKey = [temp lastObject];
+            
+            curValue = [finalUrlList objectForKey:curKey];
+            //curValue = [finalUrlList objectforVal:curKey];
+            //curImagePath [NSurl fileU  documentsDirectory]
+            //NSString * test = NSDocumentDirectory;
+            curImagePath = [self getFileUrl:curValue];
+            //If it is nill, try a new image
+            //NSString * fixedImage = @"ASKTsUz.png";
+            //NSURL * tempPath = [self getFileUrl:fixedImage];
+            //[self setWallpaper:tempPath];
+            
+            NSLog(@"before setting, path is:%@", curImagePath);
+            [self setWallpaper: curImagePath];
+            
+            //remove the current used wallpaper
+            //NEED TO BE BUILT
+            
+            [self deleteFile:curValue];
+            
+            [finalUrlList removeObjectForKey:curKey];
+            
+        }
     }
     
 }
