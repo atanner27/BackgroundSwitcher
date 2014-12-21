@@ -323,7 +323,9 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
         NSDictionary *dict = [groupDic objectForKey:@"data"];
         NSString * url = [dict objectForKey:@"url"];
         
-        if ([url rangeOfString:@"imgur"].location == NSNotFound) {
+        
+        //does not need to just be from imgur
+        /*if ([url rangeOfString:@"imgur"].location == NSNotFound) {
             //Not from imgur
             NSLog(@"string does not contain bla");
         } else {
@@ -336,18 +338,20 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
             //Add the url to the global list
             
             //NEEDS to be revised with mime types
-            //if the url has a jpg or png ext then add
-            if(([url rangeOfString:@"jpg"].location != NSNotFound) || ([url rangeOfString:@"png"].location != NSNotFound) ) {
-                
-                [urlList addObject:url];
-            
-            }
+         
         
             
             //[urlList addObject:test];
             //[finalUrlList insertValue:url inPropertyWithKey:@"1234"];
             //[finalUrlList setObject:url forKey:url];
             NSLog(@"string contains bla!");
+        }*/
+        //testing
+        //if the url has a jpg or png ext then add
+        if(([url rangeOfString:@"jpg"].location != NSNotFound) || ([url rangeOfString:@"png"].location != NSNotFound) ) {
+            
+            [urlList addObject:url];
+            
         }
         
     }
