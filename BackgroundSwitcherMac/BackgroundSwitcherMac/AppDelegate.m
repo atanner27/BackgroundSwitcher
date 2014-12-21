@@ -141,7 +141,10 @@
             /*NSArray *temp = [dict allKeysForObject:knownObject];
              NSString *key = [temp lastObject];*/
             //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-            curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+            NSLog(@"test count %d", finalUrlList.count);
+            //testing
+            curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:[self getRandomNumberBetween:1 to:finalUrlList.count -1]]];
+            //curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
             NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
             
             NSArray *temp = [finalUrlList allKeysForObject:curValue];
@@ -161,11 +164,9 @@
             [self setWallpaper: curImagePath];
             
             //remove the current used wallpaper
-            //NEED TO BE BUILT
+            //[self deleteFile:curValue];
             
-            [self deleteFile:curValue];
-            
-            [finalUrlList removeObjectForKey:curKey];
+            //[finalUrlList removeObjectForKey:curKey];
             
         }
     }
@@ -306,10 +307,6 @@ NSURLResponse *response;
 
 NSData *responseData = [NSURLConnection sendSynchronousRequest:request   returningResponse:&response error:&err];
 
-//You need to check response.Once you get the response copy that and paste in ONLINE JSON VIEWER.If you do this clearly you can get the correct results.
-
-//After that it depends upon the json format whether it is DICTIONARY or ARRAY
-
 NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error: &err];
 
     //NSLog(jsonArray);
@@ -331,8 +328,14 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
             NSLog(@"string does not contain bla");
         } else {
             //from imgur. use it
+            //testing
+            //add i. to beginning to make sure it is an image.
+            //NSString * test = @"i.";
+            //test += url;
+            //test = [test stringByAppendingString:url];
             //Add the url to the global list
             [urlList addObject:url];
+            //[urlList addObject:test];
             //[finalUrlList insertValue:url inPropertyWithKey:@"1234"];
             //[finalUrlList setObject:url forKey:url];
             NSLog(@"string contains bla!");
