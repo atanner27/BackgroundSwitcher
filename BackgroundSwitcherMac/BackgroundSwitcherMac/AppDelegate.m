@@ -334,7 +334,16 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
             //test += url;
             //test = [test stringByAppendingString:url];
             //Add the url to the global list
-            [urlList addObject:url];
+            
+            //NEEDS to be revised with mime types
+            //if the url has a jpg or png ext then add
+            if(([url rangeOfString:@"jpg"].location != NSNotFound) || ([url rangeOfString:@"png"].location != NSNotFound) ) {
+                
+                [urlList addObject:url];
+            
+            }
+        
+            
             //[urlList addObject:test];
             //[finalUrlList insertValue:url inPropertyWithKey:@"1234"];
             //[finalUrlList setObject:url forKey:url];
