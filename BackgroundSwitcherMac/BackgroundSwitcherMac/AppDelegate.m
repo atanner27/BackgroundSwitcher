@@ -33,7 +33,7 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
     
-    statusImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"picture11" ofType:@"png"]];
+    statusImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"icon" ofType:@"png"]];
     
     [statusItem setImage:statusImage];
     NSMenu *menu = [[NSMenu alloc] init];
@@ -136,15 +136,15 @@
      NSLog(@"in wallpapper timer, just before if index");
     if(finalUrlList != nil)
     {
-        if ([finalUrlList allKeys] > 0)
+        if (finalUrlList.count > 0)
         {
             /*NSArray *temp = [dict allKeysForObject:knownObject];
              NSString *key = [temp lastObject];*/
             //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-            NSLog(@"test count %d", finalUrlList.count);
+            NSLog(@"test count %lu", (unsigned long)finalUrlList.count);
             //testing
-            curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:[self getRandomNumberBetween:1 to:finalUrlList.count -1]]];
-            //curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
+            /*curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:[self getRandomNumberBetween:0 to:finalUrlList.count]]];*/
+            curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
             NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
             
             NSArray *temp = [finalUrlList allKeysForObject:curValue];
@@ -166,7 +166,7 @@
             //remove the current used wallpaper
             //[self deleteFile:curValue];
             
-            //[finalUrlList removeObjectForKey:curKey];
+            [finalUrlList removeObjectForKey:curKey];
             
         }
     }
