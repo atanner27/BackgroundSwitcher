@@ -12,6 +12,9 @@
 {
     NSMutableArray * urlList;
     NSMutableDictionary * finalUrlList;
+    NSMutableArray * subreddits;
+    NSMutableArray * toBeDeleted;
+    
     
 }
 
@@ -24,8 +27,11 @@
 - (void) awakeFromNib{
     //data
     urlList = [NSMutableArray new];
+    subreddits = [NSMutableArray new];
+    toBeDeleted = [NSMutableArray new];
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
+    
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -136,6 +142,10 @@
         {
             NSLog(@"pulling new subreddits");
             [self refreshList];
+            
+            //delete "used" images
+            
+            
         }
         //Then, providing there are more then 0. set a wallpaper
         if (finalUrlList.count > 0)
