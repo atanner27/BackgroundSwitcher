@@ -21,6 +21,7 @@
 -(void)setWallpaper:(NSURL *) imageUrl;
 -(NSURL*) getFileUrl:(NSString *) fileName;
 -(void)wallpaperTimer;
+-(void) refreshList;
 - (IBAction)changeSubreddits:(id)sender;
 -(void)callReddit:(NSString *) subreddit;
 -(NSURL *)giveRandomImage;

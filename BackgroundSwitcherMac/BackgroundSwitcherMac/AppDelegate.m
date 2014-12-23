@@ -39,30 +39,10 @@
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
-    
-    //Make the reddit calls to buld up list of images
-    //Need to expand to multiple subreddits
-    [self callReddit: @"nothing yet"];
-    
-    //once have the list of images
-    for(NSString * curString in urlList)
-    {
-        //split out the unique imgur tag
-        NSArray *array = [curString componentsSeparatedByString:@"/"];
-        NSString * split = array[3];
-        array = [split componentsSeparatedByString:@"."];
-        split = array[0];
-        
-        //NSLog(array[3]);
-        //create a key value mapping with the url as the key and the imagename as value
-        NSMutableString * imageName = [NSMutableString stringWithFormat:@"%@", split];
-        [imageName appendFormat:@".png"];
-        
-        [finalUrlList setObject:imageName forKey:curString];
-        //Save all of the local images
-        [self saveImageInLocalDirectory:curString filename: imageName ];
-    }
  
+    //Refresh the list of images/get new images
+    [self refreshList];
+    
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
@@ -109,6 +89,39 @@
     }
 }
 
+//This should handle updating the lists and grabbing new images
+-(void) refreshList
+{
+    //needs to have access to config data
+    //for each subreddit on the list
+    //needs to pull from reddit
+    
+    //needs to save those images to disk
+    
+    //Make the reddit calls to buld up list of images
+    //Need to expand to multiple subreddits
+    [self callReddit: @"nothing yet"];
+    
+    //once have the list of images
+    for(NSString * curString in urlList)
+    {
+        //split out the unique imgur tag
+        NSArray *array = [curString componentsSeparatedByString:@"/"];
+        NSString * split = array[3];
+        array = [split componentsSeparatedByString:@"."];
+        split = array[0];
+        
+        //NSLog(array[3]);
+        //create a key value mapping with the url as the key and the imagename as value
+        NSMutableString * imageName = [NSMutableString stringWithFormat:@"%@", split];
+        [imageName appendFormat:@".png"];
+        
+        [finalUrlList setObject:imageName forKey:curString];
+        //Save all of the local images
+        [self saveImageInLocalDirectory:curString filename: imageName ];
+    }
+    
+}
 -(void)wallpaperTimer
 {
     NSURL * curImagePath;
@@ -118,8 +131,16 @@
     //NSLog(@"in wallpapper timer, just before if index");
     if(finalUrlList != nil)
     {
+        //If there are <4 then pull new images
+        if (finalUrlList.count < 4)
+        {
+            NSLog(@"pulling new subreddits");
+            [self refreshList];
+        }
+        //Then, providing there are more then 0. set a wallpaper
         if (finalUrlList.count > 0)
         {
+            //This is completely randomized, so images can be in any order
             curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
             //NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
             
