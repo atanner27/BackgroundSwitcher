@@ -27,9 +27,6 @@
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
     
-    
-    
-    //statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength]]
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
     
@@ -37,8 +34,7 @@
     
     [statusItem setImage:statusImage];
     NSMenu *menu = [[NSMenu alloc] init];
-    [menu addItemWithTitle:@"Change Background" action:@selector(doSomething:) keyEquivalent:@""];
-    [menu addItemWithTitle:@"Change Subreddits" action:@selector(doSomethingElse:) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Change Subreddits" action:@selector(changeSubreddits:) keyEquivalent:@""];
    
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
@@ -46,10 +42,9 @@
     
     //Make the reddit calls to buld up list of images
     //Need to expand to multiple subreddits
-    [self callReddit];
+    [self callReddit: @"nothing yet"];
     
     //once have the list of images
-    NSInteger index = 0;
     for(NSString * curString in urlList)
     {
         //split out the unique imgur tag
@@ -63,19 +58,11 @@
         NSMutableString * imageName = [NSMutableString stringWithFormat:@"%@", split];
         [imageName appendFormat:@".png"];
         
-        //[finalUrlList setObject:imageName forKey:curString];
         [finalUrlList setObject:imageName forKey:curString];
         //Save all of the local images
         [self saveImageInLocalDirectory:curString filename: imageName ];
-        index++;
     }
-    //Must download the files to temp
-    //[self saveImageInLocalDirectory ];
-    //dont knwo if should be giving it current image url
-    //or if should be giving it the whole structure
-    
-    
-    
+ 
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
@@ -85,12 +72,6 @@
                                    userInfo:nil
                                     repeats:YES];
     
-}
-- (IBAction)doSomething:(id)sender
-{
-    NSLog(@"is doing something");
-    
-    [self setWallpaper];
 }
 
 -(NSURL*) getFileUrl:(NSString *) fileName
@@ -109,6 +90,8 @@
     return nil;
 }
 
+
+//NEEDS REVISING
 -(void) deleteFile:(NSString *) imgName
 {
     NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -128,44 +111,30 @@
 
 -(void)wallpaperTimer
 {
-    NSString * curImageName;
     NSURL * curImagePath;
     NSString * curKey;
     NSString * curValue;
     //grab a local image url
-     NSLog(@"in wallpapper timer, just before if index");
+    //NSLog(@"in wallpapper timer, just before if index");
     if(finalUrlList != nil)
     {
         if (finalUrlList.count > 0)
         {
-            /*NSArray *temp = [dict allKeysForObject:knownObject];
-             NSString *key = [temp lastObject];*/
-            //curKey = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-            NSLog(@"test count %lu", (unsigned long)finalUrlList.count);
-            //testing
-            /*curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:[self getRandomNumberBetween:0 to:finalUrlList.count]]];*/
             curValue = finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]];
-            NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
+            //NSLog(@"index 0 is: %@", finalUrlList[[[finalUrlList allKeys] objectAtIndex:0]]);
             
             NSArray *temp = [finalUrlList allKeysForObject:curValue];
             curKey = [temp lastObject];
             
             curValue = [finalUrlList objectForKey:curKey];
-            //curValue = [finalUrlList objectforVal:curKey];
-            //curImagePath [NSurl fileU  documentsDirectory]
-            //NSString * test = NSDocumentDirectory;
             curImagePath = [self getFileUrl:curValue];
-            //If it is nill, try a new image
-            //NSString * fixedImage = @"ASKTsUz.png";
-            //NSURL * tempPath = [self getFileUrl:fixedImage];
-            //[self setWallpaper:tempPath];
-            
-            NSLog(@"before setting, path is:%@", curImagePath);
+            //Set the wallpaper
             [self setWallpaper: curImagePath];
             
             //remove the current used wallpaper
             //[self deleteFile:curValue];
             
+            //Remove the item from the up next list
             [finalUrlList removeObjectForKey:curKey];
             
         }
@@ -176,15 +145,8 @@
 
 -(void)setWallpaper:(NSURL *) imageUrl
 {
-    NSLog(@"inside set wallpaper");
-    //NSImage * backImage;
-    //NSBundle * bundle = [NSBundle mainBundle ];
-    
-    //backImage = [[NSImage alloc ] initWithContentsOfFile:[bundle pathForResource:@"back1" ofType:@"jpg"]];
-    
     NSArray *screens = [NSScreen screens];
     NSScreen *curScreen;
-    NSUInteger screenIndex = 1;
     for (curScreen in screens)
     {
         NSError *error = nil;
@@ -192,14 +154,11 @@
         NSMutableDictionary *screenOptions =
         
         [[[NSWorkspace sharedWorkspace] desktopImageOptionsForScreen:curScreen] mutableCopy];
-       
-        
-        //NSURL *imageURL = [[NSWorkspace sharedWorkspace] desktopImageURLForScreen:curScreen];
         
         //Use reddit url
         NSLog(@"inside set wallpaper image url is:%@", imageUrl);
         
-        ///using this still works to set
+        ///using this still works to set random for testing
         //imageUrl = [self giveRandomImage];
         
         if (![[NSWorkspace sharedWorkspace] setDesktopImageURL:imageUrl
@@ -218,6 +177,7 @@
     }
 }
 
+//Used to test background setting using a local image
 -(NSURL *)giveRandomImage
 {
     int randomNumber = [self getRandomNumberBetween:1 to:2];
@@ -237,9 +197,9 @@
 }
 
 
-- (IBAction)doSomethingElse:(id)sender
+- (IBAction)changeSubreddits:(id)sender
 {
-    NSLog(@"is doing something");
+    NSLog(@"changing subreddits");
     //[self setWallpaper];
     
     /*ViewControllerMonitorMenu *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerMonitorMenu"];
@@ -258,11 +218,13 @@
     //write out preferences to config file
 }
 
+//Grabs a number in the range given
 -(int)getRandomNumberBetween:(int)from to:(int)to {
     
     return (int)from + arc4random() % (to-from+1);
 }
 
+//Saves a remote url to a file into the docs folder
 -(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName
 {
     NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -292,9 +254,11 @@
     }
 }
 
--(void)callReddit
+//Call the reddit api and get a set of images
+-(void)callReddit:(NSString *) subreddit
 {
 //just give your URL instead of my URL
+//http://www.reddit.com/r/ + subreddit + /hot.json
 NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:@"http://www.reddit.com/r/earthporn/hot.json"]];
 
 [request setHTTPMethod:@"GET"];
@@ -313,41 +277,13 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     
     NSArray *array=[[jsonArray objectForKey:@"data"]objectForKey:@"children"];
     //start parsing it down
-    NSDictionary * testing = [jsonArray objectForKey:@"sadas"];
-    
-    //NSArray * smallerArray = [array objectForKey:@"sda"];
     //each element of the array is a post
     for (NSDictionary * groupDic in array) {
-    
-        NSArray *dataObjs = [groupDic objectForKey:@"data"];
         NSDictionary *dict = [groupDic objectForKey:@"data"];
         NSString * url = [dict objectForKey:@"url"];
         
-        
-        //does not need to just be from imgur
-        /*if ([url rangeOfString:@"imgur"].location == NSNotFound) {
-            //Not from imgur
-            NSLog(@"string does not contain bla");
-        } else {
-            //from imgur. use it
-            //testing
-            //add i. to beginning to make sure it is an image.
-            //NSString * test = @"i.";
-            //test += url;
-            //test = [test stringByAppendingString:url];
-            //Add the url to the global list
-            
-            //NEEDS to be revised with mime types
-         
-        
-            
-            //[urlList addObject:test];
-            //[finalUrlList insertValue:url inPropertyWithKey:@"1234"];
-            //[finalUrlList setObject:url forKey:url];
-            NSLog(@"string contains bla!");
-        }*/
-        //testing
         //if the url has a jpg or png ext then add
+        //should revise to better method
         if(([url rangeOfString:@"jpg"].location != NSNotFound) || ([url rangeOfString:@"png"].location != NSNotFound) ) {
             
             [urlList addObject:url];

@@ -18,8 +18,14 @@
 }
 
 -(int)getRandomNumberBetween:(int)from to:(int)to;
-- (IBAction)doSomething:(id)sender;
--(void)setWallpaper;
+-(void)setWallpaper:(NSURL *) imageUrl;
+-(NSURL*) getFileUrl:(NSString *) fileName;
+-(void)wallpaperTimer;
+- (IBAction)changeSubreddits:(id)sender;
+-(void)callReddit:(NSString *) subreddit;
+-(NSURL *)giveRandomImage;
+-(void) deleteFile:(NSString *) imgName;
+-(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName;
 
 @property (assign) IBOutlet NSWindow * window;
 
