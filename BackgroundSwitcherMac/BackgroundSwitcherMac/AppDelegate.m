@@ -171,7 +171,7 @@
             //Set the wallpaper
             [self setWallpaper: curImagePath];
             
-            //remove the current used wallpaper
+            //add the "used" wallpaper for deletion
             [toBeDeleted addObject:curValue];
             //[self deleteFile:curValue];
             
