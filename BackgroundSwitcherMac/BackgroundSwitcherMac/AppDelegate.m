@@ -98,6 +98,15 @@
 //This should handle updating the lists and grabbing new images
 -(void) refreshList
 {
+    //Delete old images
+    for(NSString * imageName in toBeDeleted)
+    {
+        [self deleteFile:imageName];
+        
+    }
+    //empty deletion pile
+    [toBeDeleted removeAllObjects];
+    
     //needs to have access to config data
     //for each subreddit on the list
     //needs to pull from reddit
@@ -140,7 +149,7 @@
         //If there are <4 then pull new images
         if (finalUrlList.count < 4)
         {
-            NSLog(@"pulling new subreddits");
+            NSLog(@"pulling new images");
             [self refreshList];
             
             //delete "used" images
@@ -163,6 +172,7 @@
             [self setWallpaper: curImagePath];
             
             //remove the current used wallpaper
+            [toBeDeleted addObject:curValue];
             //[self deleteFile:curValue];
             
             //Remove the item from the up next list
