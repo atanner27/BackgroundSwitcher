@@ -14,8 +14,6 @@
     NSMutableDictionary * finalUrlList;
     NSMutableArray * subreddits;
     NSMutableArray * toBeDeleted;
-    
-    
 }
 
 @end
@@ -54,7 +52,7 @@
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:1200.0
+    [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(wallpaperTimer)
                                    userInfo:nil
@@ -103,7 +101,7 @@
     
     //Make the reddit calls to buld up list of images
     //Need to expand to multiple subreddits
-    [self callReddit: @"nothing yet"];
+    [self callReddit: @"earthporn"];
     
     //once have the list of images
     for(NSString * curString in urlList)
@@ -136,12 +134,9 @@
         //If there are <4 then pull new images
         if (finalUrlList.count < 4)
         {
+            //pull from subreddits
             NSLog(@"pulling new images");
             [self refreshList];
-            
-            //delete "used" images
-            
-            
         }
         //Then, providing there are more then 0. set a wallpaper
         if (finalUrlList.count > 0)
@@ -287,7 +282,9 @@
 {
 //just give your URL instead of my URL
 //http://www.reddit.com/r/ + subreddit + /hot.json
-NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:@"http://www.reddit.com/r/earthporn/hot.json"]];
+    NSString * reddit = @"http://www.reddit.com/r/";
+    NSString *finalPath = [[[reddit stringByAppendingString:subreddit] stringByAppendingString:@"/hot.json"] ;];
+NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:finalPath]];
 
 [request setHTTPMethod:@"GET"];
 
@@ -331,9 +328,9 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
                                                           attributes:nil
                                                                error:&error];
     if (!success)
-        NSLog(@"Error");
+        NSLog(@"Error creating folder");
     else
-        NSLog(@"Success");
+        NSLog(@"Successfully created folder");
 }
 
 -(NSString * ) getImagePaths
@@ -345,6 +342,8 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     
     return imageDirPath;
 }
+
+
 
 -(NSURL*) getFileUrl:(NSString *) fileName
 {
