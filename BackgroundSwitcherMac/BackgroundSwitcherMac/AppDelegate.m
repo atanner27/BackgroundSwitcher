@@ -46,13 +46,15 @@
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
  
+    //make the storage folder if it does not exist
+    [self makeFolder];
     //Refresh the list of images/get new images
     [self refreshList];
     
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:2.0
+    [NSTimer scheduledTimerWithTimeInterval:1200.0
                                      target:self
                                    selector:@selector(wallpaperTimer)
                                    userInfo:nil
@@ -60,27 +62,13 @@
     
 }
 
--(NSURL*) getFileUrl:(NSString *) fileName
-{
-    //NSString *filename = @"whatever you've saved your filename as";
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
-    NSString *documentsDirectory = [pathArray objectAtIndex:0];
-    NSString *yourSoundPath = [documentsDirectory stringByAppendingPathComponent:fileName];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:yourSoundPath])
-    {
-        NSURL *soundURL = [NSURL fileURLWithPath:yourSoundPath isDirectory:NO];
-        return soundURL;
-    }
-    
-    return nil;
-}
 
 
-//NEEDS REVISING
+
+//seems to work, as long as no concurrency issues
 -(void) deleteFile:(NSString *) imgName
 {
-    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString * documentsDirectoryPath = [self getImagePaths];
     NSError * error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
    
@@ -126,7 +114,6 @@
         array = [split componentsSeparatedByString:@"."];
         split = array[0];
         
-        //NSLog(array[3]);
         //create a key value mapping with the url as the key and the imagename as value
         NSMutableString * imageName = [NSMutableString stringWithFormat:@"%@", split];
         [imageName appendFormat:@".png"];
@@ -268,7 +255,7 @@
 //Saves a remote url to a file into the docs folder
 -(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName
 {
-    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString * documentsDirectoryPath = [self getImagePaths];
     NSString *imgName = fileName;
     NSString *imgURL = url;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -334,6 +321,42 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     }
     
     
+}
+
+-(void) makeFolder{
+    NSString * imageDirPath = [self getImagePaths];
+    NSError * error = nil;
+    BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath: imageDirPath
+                                         withIntermediateDirectories:YES
+                                                          attributes:nil
+                                                               error:&error];
+    if (!success)
+        NSLog(@"Error");
+    else
+        NSLog(@"Success");
+}
+
+-(NSString * ) getImagePaths
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    NSString * imageDir = @"/backgroundimages";
+    NSString *imageDirPath = [documentsDirectory stringByAppendingPathComponent:imageDir];
+    
+    return imageDirPath;
+}
+
+-(NSURL*) getFileUrl:(NSString *) fileName
+{
+    //get the image path, append filename and get url
+    NSString *yourSoundPath = [[self getImagePaths] stringByAppendingPathComponent:fileName];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:yourSoundPath])
+    {
+        NSURL *soundURL = [NSURL fileURLWithPath:yourSoundPath isDirectory:NO];
+        return soundURL;
+    }
+    
+    return nil;
 }
 
 
