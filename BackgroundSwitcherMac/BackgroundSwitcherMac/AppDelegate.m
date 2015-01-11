@@ -29,7 +29,8 @@
     toBeDeleted = [NSMutableArray new];
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
-    
+    [subreddits addObject:@"earthporn"];
+    [subreddits addObject:@"spaceporn"];
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -101,8 +102,10 @@
     
     //Make the reddit calls to buld up list of images
     //Need to expand to multiple subreddits
-    [self callReddit: @"earthporn"];
-    
+    for(NSString * subreddit in subreddits)
+    {
+    [self callReddit:subreddit];
+    }
     //once have the list of images
     for(NSString * curString in urlList)
     {
@@ -283,7 +286,9 @@
 //just give your URL instead of my URL
 //http://www.reddit.com/r/ + subreddit + /hot.json
     NSString * reddit = @"http://www.reddit.com/r/";
-    NSString *finalPath = [[[reddit stringByAppendingString:subreddit] stringByAppendingString:@"/hot.json"] ;];
+    reddit = [reddit stringByAppendingString:subreddit];
+    NSString * finalPath = [reddit stringByAppendingString:@"/hot.json"];
+    
 NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL  URLWithString:finalPath]];
 
 [request setHTTPMethod:@"GET"];
