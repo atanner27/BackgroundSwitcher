@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "442701154.251868"
+            timestampString = "442726650.272332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "-callReddit:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "442701154.251868"
+            timestampString = "442726437.816603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-giveRandomImage"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "442701154.251868"
+            timestampString = "442726437.816603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-setWallpaper:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "442701154.251868"
+            timestampString = "442726437.816603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-setWallpaper:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "442701154.251868"
+            timestampString = "442726437.816603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "-wallpaperTimer"
             landmarkType = "5">
          </BreakpointContent>

@@ -30,7 +30,7 @@
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
     [subreddits addObject:@"earthporn"];
-    [subreddits addObject:@"spaceporn"];
+    //[subreddits addObject:@"spaceporn"];
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -41,6 +41,9 @@
     NSMenu *menu = [[NSMenu alloc] init];
     [menu addItemWithTitle:@"Change Subreddits" action:@selector(changeSubreddits:) keyEquivalent:@""];
    
+    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
+    [menu addItemWithTitle:@"Change Picture" action:@selector(changePicture:) keyEquivalent:@""];
+    
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
@@ -53,7 +56,7 @@
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:2.0
+    [NSTimer scheduledTimerWithTimeInterval:30.0
                                      target:self
                                    selector:@selector(wallpaperTimer)
                                    userInfo:nil
@@ -222,6 +225,10 @@
     return url;
 }
 
+- (IBAction)changePicture:(id)sender
+{
+    [self wallpaperTimer];
+}
 
 - (IBAction)changeSubreddits:(id)sender
 {
