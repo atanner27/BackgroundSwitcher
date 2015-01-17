@@ -7,15 +7,18 @@
 //
 
 #import "AppDelegate.h"
-#import "OptionsWindowcontroller.h"
+#import "OptionsWindowController.h"
+#import "SettingsViewController.h"
 @interface AppDelegate ()
 {
     NSMutableArray * urlList;
     NSMutableDictionary * finalUrlList;
     NSMutableArray * subreddits;
     NSMutableArray * toBeDeleted;
+    NSTimer * Timer;
 }
 
+@property (strong) OptionsWindowController *thing;
 @end
 
 @implementation AppDelegate
@@ -39,11 +42,11 @@
     
     [statusItem setImage:statusImage];
     NSMenu *menu = [[NSMenu alloc] init];
-    [menu addItemWithTitle:@"Change Subreddits" action:@selector(changeSubreddits:) keyEquivalent:@""];
-   
-    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
-    [menu addItemWithTitle:@"Change Picture" action:@selector(changePicture:) keyEquivalent:@""];
     
+    [menu addItemWithTitle:@"Change Subreddits" action:@selector(changeSubreddits:) keyEquivalent:@""];
+    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
+    
+    [menu addItemWithTitle:@"Change Picture" action:@selector(changePicture:) keyEquivalent:@""];
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
@@ -56,7 +59,7 @@
     //wrap the selector in a function that handles cycling through images/get new
     //if number of images left to be cycled through is  > 4
     //set up timer
-    [NSTimer scheduledTimerWithTimeInterval:30.0
+    Timer = [NSTimer scheduledTimerWithTimeInterval:1200.0
                                      target:self
                                    selector:@selector(wallpaperTimer)
                                    userInfo:nil
@@ -238,11 +241,36 @@
     /*ViewControllerMonitorMenu *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerMonitorMenu"];
      [self presentViewController:monitorMenuViewController animated:NO completion:nil];
      */
+    
+    
+    /*OptionsWindowController *add = [[OptionsWindowController alloc]
+                                    initWithWindowNibName:@"OptionsWindow"];
+    [add showWindow:add];*/
+    
+    
+    self.thing = [[OptionsWindowController alloc]
+                                    initWithWindowNibName:@"OptionsWindowController"];
+    [self.thing showWindow:self.thing];
+    
+    
+    
+    
+    //[window makeKeyAndOrderFront:add];
+    
+    //UIViewController *vc = self.window.rootViewController;
+    //vc.
+    /*SettingsViewController * test = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    
+    [test loadView];*/
+    
+    //[self ]
 
     //[NSApplication presentViewController:OptionsWindowcontroller animated:YES ^{}];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+   // self.window = [[NSWindow alloc] initWithFrame:[[NSScreen mainScreen] ]];
+   // self.window.contentViewController = [[SettingsViewController alloc] init];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
