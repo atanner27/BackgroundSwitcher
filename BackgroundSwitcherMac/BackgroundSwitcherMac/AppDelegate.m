@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OptionsWindowController.h"
-#import "SettingsViewController.h"
+
 @interface AppDelegate ()
 {
     NSMutableArray * urlList;
@@ -251,6 +251,7 @@
     self.thing = [[OptionsWindowController alloc]
                                     initWithWindowNibName:@"OptionsWindowController"];
     [self.thing showWindow:self.thing];
+    //[self.thing makeKeyAndOrderFront:self.thing];
     
     
     

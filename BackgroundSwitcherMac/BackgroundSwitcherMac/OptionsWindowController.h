@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface OptionsWindowController : NSWindowController
--(void) saveClicked;
+@property (weak) IBOutlet NSButton *saveButton;
+- (IBAction)saveClicked:(id)sender;
 @end

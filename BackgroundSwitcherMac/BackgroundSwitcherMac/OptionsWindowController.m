@@ -10,6 +10,7 @@
 
 @interface OptionsWindowController ()
 
+
 @end
 
 @implementation OptionsWindowController
@@ -19,8 +20,14 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
--(void) saveClicked{
+- (IBAction)saveClicked:(id)sender {
     
+    //parse data
+    
+    //update config
+    
+    //close window
 }
+
 
 @end

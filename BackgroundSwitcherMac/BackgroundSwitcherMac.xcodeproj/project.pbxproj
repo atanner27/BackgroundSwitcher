@@ -16,11 +16,8 @@
 		8F80E9ED1A3E8B3D003A326E /* back2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9EC1A3E8B3C003A326E /* back2.jpg */; };
 		8F80E9F41A43F342003A326E /* config.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9F31A43F342003A326E /* config.txt */; };
 		8F80E9F61A4557E4003A326E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9F51A4557E4003A326E /* icon.png */; };
-		8F80E9F91A4565A4003A326E /* parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E9F71A4565A4003A326E /* parsing.c */; };
 		8F8190EA1A66086100C98CB2 /* OptionsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8190E81A66086100C98CB2 /* OptionsWindowController.m */; };
 		8F8190EB1A66086100C98CB2 /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8190E91A66086100C98CB2 /* OptionsWindowController.xib */; };
-		8F8190EF1A660E8000C98CB2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8190ED1A660E8000C98CB2 /* SettingsViewController.m */; };
-		8F8190F01A660E8000C98CB2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8190EE1A660E8000C98CB2 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,14 +45,9 @@
 		8F80E9EC1A3E8B3C003A326E /* back2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back2.jpg; sourceTree = "<group>"; };
 		8F80E9F31A43F342003A326E /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.txt; sourceTree = "<group>"; };
 		8F80E9F51A4557E4003A326E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		8F80E9F71A4565A4003A326E /* parsing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parsing.c; sourceTree = "<group>"; };
-		8F80E9F81A4565A4003A326E /* parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parsing.h; sourceTree = "<group>"; };
 		8F8190E71A66086100C98CB2 /* OptionsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsWindowController.h; sourceTree = "<group>"; };
 		8F8190E81A66086100C98CB2 /* OptionsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsWindowController.m; sourceTree = "<group>"; };
 		8F8190E91A66086100C98CB2 /* OptionsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
-		8F8190EC1A660E8000C98CB2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		8F8190ED1A660E8000C98CB2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		8F8190EE1A660E8000C98CB2 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,14 +91,9 @@
 			children = (
 				8F80E9CA1A3D4E57003A326E /* AppDelegate.h */,
 				8F80E9CB1A3D4E57003A326E /* AppDelegate.m */,
-				8F8190EC1A660E8000C98CB2 /* SettingsViewController.h */,
-				8F8190ED1A660E8000C98CB2 /* SettingsViewController.m */,
-				8F8190EE1A660E8000C98CB2 /* SettingsViewController.xib */,
 				8F8190E71A66086100C98CB2 /* OptionsWindowController.h */,
 				8F8190E81A66086100C98CB2 /* OptionsWindowController.m */,
 				8F8190E91A66086100C98CB2 /* OptionsWindowController.xib */,
-				8F80E9F71A4565A4003A326E /* parsing.c */,
-				8F80E9F81A4565A4003A326E /* parsing.h */,
 				8F80E9F51A4557E4003A326E /* icon.png */,
 				8F80E9EA1A3E8B35003A326E /* back1.jpg */,
 				8F80E9EC1A3E8B3C003A326E /* back2.jpg */,
@@ -227,7 +214,6 @@
 				8F80E9D01A3D4E57003A326E /* Images.xcassets in Resources */,
 				8F80E9F41A43F342003A326E /* config.txt in Resources */,
 				8F8190EB1A66086100C98CB2 /* OptionsWindowController.xib in Resources */,
-				8F8190F01A660E8000C98CB2 /* SettingsViewController.xib in Resources */,
 				8F80E9D31A3D4E57003A326E /* MainMenu.xib in Resources */,
 				8F80E9EB1A3E8B36003A326E /* back1.jpg in Resources */,
 				8F80E9F61A4557E4003A326E /* icon.png in Resources */,
@@ -251,8 +237,6 @@
 			files = (
 				8F8190EA1A66086100C98CB2 /* OptionsWindowController.m in Sources */,
 				8F80E9CE1A3D4E57003A326E /* main.m in Sources */,
-				8F8190EF1A660E8000C98CB2 /* SettingsViewController.m in Sources */,
-				8F80E9F91A4565A4003A326E /* parsing.c in Sources */,
 				8F80E9CC1A3D4E57003A326E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
