@@ -11,5 +11,5 @@
 @interface Utility : NSObject
 +(NSMutableArray *) readFromConfig;
 +(NSString * ) getImagePaths;
--(void) writeToConfig:(NSString *)rawInput;
++(void) writeToConfig:(NSString *)rawInput;
 @end

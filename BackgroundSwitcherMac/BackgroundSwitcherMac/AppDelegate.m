@@ -34,11 +34,12 @@
     toBeDeleted = [NSMutableArray new];
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
+    //make the storage folder if it does not exist
+    [self makeFolder];
     //Make the config file if it does not exist
+    
+    //read config or create default
     subreddits = [Utility readFromConfig];
-    //Set up preferences
-    //[subreddits addObject:@"earthporn"];
-    //[subreddits addObject:@"spaceporn"];
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSBundle * bundle = [NSBundle mainBundle ];
@@ -56,8 +57,6 @@
     [menu addItemWithTitle:@"Quit BackgroundChanger" action:@selector(terminate:) keyEquivalent:@""];
     [statusItem setMenu:menu];
  
-    //make the storage folder if it does not exist
-    [self makeFolder];
     //Refresh the list of images/get new images
     [self refreshList];
     
@@ -317,7 +316,7 @@
     }
     else{
         // file exist
-        NSLog(@"file exist");
+        NSLog(@"file exists");
     }
 }
 
@@ -348,7 +347,7 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     
     NSArray *array=[[jsonArray objectForKey:@"data"]objectForKey:@"children"];
     //start parsing it down
-    //each element of the array is a post
+    //each element of the array is an image post
     for (NSDictionary * groupDic in array) {
         NSDictionary *dict = [groupDic objectForKey:@"data"];
         NSString * url = [dict objectForKey:@"url"];

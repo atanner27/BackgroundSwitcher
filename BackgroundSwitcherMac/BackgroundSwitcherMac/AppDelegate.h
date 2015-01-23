@@ -26,6 +26,7 @@
 -(void)callReddit:(NSString *) subreddit;
 -(NSURL *)giveRandomImage;
 -(void) deleteFile:(NSString *) imgName;
+-(void) makeFolder;
 -(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName;
 
 @property (assign) IBOutlet NSWindow * window;
