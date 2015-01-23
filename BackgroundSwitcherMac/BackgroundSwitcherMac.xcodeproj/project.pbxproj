@@ -18,6 +18,7 @@
 		8F80E9F61A4557E4003A326E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F80E9F51A4557E4003A326E /* icon.png */; };
 		8F8190EA1A66086100C98CB2 /* OptionsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8190E81A66086100C98CB2 /* OptionsWindowController.m */; };
 		8F8190EB1A66086100C98CB2 /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8190E91A66086100C98CB2 /* OptionsWindowController.xib */; };
+		8F8190F31A6AB73D00C98CB2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8190F21A6AB73D00C98CB2 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		8F8190E71A66086100C98CB2 /* OptionsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsWindowController.h; sourceTree = "<group>"; };
 		8F8190E81A66086100C98CB2 /* OptionsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsWindowController.m; sourceTree = "<group>"; };
 		8F8190E91A66086100C98CB2 /* OptionsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
+		8F8190F11A6AB73D00C98CB2 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8F8190F21A6AB73D00C98CB2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				8F80E9D11A3D4E57003A326E /* MainMenu.xib */,
 				8F80E9F31A43F342003A326E /* config.txt */,
 				8F80E9C81A3D4E57003A326E /* Supporting Files */,
+				8F8190F11A6AB73D00C98CB2 /* Utility.h */,
+				8F8190F21A6AB73D00C98CB2 /* Utility.m */,
 			);
 			path = BackgroundSwitcherMac;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8190F31A6AB73D00C98CB2 /* Utility.m in Sources */,
 				8F8190EA1A66086100C98CB2 /* OptionsWindowController.m in Sources */,
 				8F80E9CE1A3D4E57003A326E /* main.m in Sources */,
 				8F80E9CC1A3D4E57003A326E /* AppDelegate.m in Sources */,

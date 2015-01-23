@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "OptionsWindowController.h"
+#import "Utility.h"
+
 
 @interface AppDelegate ()
 {
@@ -32,7 +34,10 @@
     toBeDeleted = [NSMutableArray new];
     finalUrlList = [NSMutableDictionary new];
     //Load up from config files
-    [subreddits addObject:@"earthporn"];
+    //Make the config file if it does not exist
+    subreddits = [Utility readFromConfig];
+    //Set up preferences
+    //[subreddits addObject:@"earthporn"];
     //[subreddits addObject:@"spaceporn"];
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];

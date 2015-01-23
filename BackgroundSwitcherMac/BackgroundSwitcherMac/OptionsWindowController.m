@@ -23,10 +23,12 @@
 - (IBAction)saveClicked:(id)sender {
     
     //parse data
-    
+    NSString *myString = [_subreddittext stringValue];
     //update config
     
     //close window
+    
+    //[self orderOut:nil];
 }
 
 

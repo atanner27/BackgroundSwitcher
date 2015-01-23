@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface OptionsWindowController : NSWindowController
+@property (weak) IBOutlet NSTextField *subreddittext;
+
 @property (weak) IBOutlet NSButton *saveButton;
 - (IBAction)saveClicked:(id)sender;
 @end
