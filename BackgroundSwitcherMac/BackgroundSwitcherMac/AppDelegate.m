@@ -78,7 +78,7 @@
 //seems to work, as long as no concurrency issues
 -(void) deleteFile:(NSString *) imgName
 {
-    NSString * documentsDirectoryPath = [self getImagePaths];
+    NSString * documentsDirectoryPath = [Utility getImagePaths];
     NSError * error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
    
@@ -294,7 +294,7 @@
 //Saves a remote url to a file into the docs folder
 -(void)saveImageInLocalDirectory:(NSString*)url filename:(NSString *) fileName
 {
-    NSString * documentsDirectoryPath = [self getImagePaths];
+    NSString * documentsDirectoryPath = [Utility getImagePaths];
     NSString *imgName = fileName;
     NSString *imgURL = url;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -367,7 +367,7 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
 }
 
 -(void) makeFolder{
-    NSString * imageDirPath = [self getImagePaths];
+    NSString * imageDirPath = [Utility getImagePaths];
     NSError * error = nil;
     BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath: imageDirPath
                                          withIntermediateDirectories:YES
@@ -379,22 +379,11 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
         NSLog(@"Successfully created folder");
 }
 
--(NSString * ) getImagePaths
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths firstObject];
-    NSString * imageDir = @"/backgroundimages";
-    NSString *imageDirPath = [documentsDirectory stringByAppendingPathComponent:imageDir];
-    
-    return imageDirPath;
-}
-
-
 
 -(NSURL*) getFileUrl:(NSString *) fileName
 {
     //get the image path, append filename and get url
-    NSString *yourSoundPath = [[self getImagePaths] stringByAppendingPathComponent:fileName];
+    NSString *yourSoundPath = [[Utility getImagePaths] stringByAppendingPathComponent:fileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:yourSoundPath])
     {
         NSURL *soundURL = [NSURL fileURLWithPath:yourSoundPath isDirectory:NO];
