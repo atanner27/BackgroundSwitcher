@@ -20,7 +20,7 @@
     NSTimer * Timer;
 }
 
-@property (strong) OptionsWindowController *thing;
+@property (strong) OptionsWindowController *options;
 @end
 
 @implementation AppDelegate
@@ -253,9 +253,9 @@
     [add showWindow:add];*/
     
     
-    self.thing = [[OptionsWindowController alloc]
+    self.options = [[OptionsWindowController alloc]
                                     initWithWindowNibName:@"OptionsWindowController"];
-    [self.thing showWindow:self.thing];
+    [self.options showWindow:self.options];
     //[self.thing makeKeyAndOrderFront:self.thing];
     
     
