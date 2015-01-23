@@ -36,8 +36,6 @@
     //Load up from config files
     //make the storage folder if it does not exist
     [self makeFolder];
-    //Make the config file if it does not exist
-    
     //read config or create default
     subreddits = [Utility readFromConfig];
     

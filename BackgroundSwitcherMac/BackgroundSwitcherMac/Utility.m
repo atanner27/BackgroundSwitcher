@@ -47,8 +47,12 @@
         //create file
         [fileManager createFileAtPath:filePath contents:nil attributes:nil];
         //write defaults to it
-        [@"earthporn" writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        [@"spaceporn" writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        NSFileHandle *myHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+        [myHandle seekToEndOfFile];
+        [myHandle writeData:[@"earthporn\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [myHandle seekToEndOfFile];
+        [myHandle writeData:[@"spaceporn\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        
         [subreddits addObject:@"earthporn"];
         [subreddits addObject:@"spaceporn"];
         
