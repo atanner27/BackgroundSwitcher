@@ -15,7 +15,7 @@
 {
     NSMutableArray * urlList;
     NSMutableDictionary * finalUrlList;
-    NSMutableArray * subreddits;
+    //NSMutableArray * subreddits;
     NSMutableArray * toBeDeleted;
     NSTimer * Timer;
 }
@@ -26,6 +26,7 @@
 @implementation AppDelegate
 
 @synthesize window;
+//@synthesize resetSubreddits;
 
 - (void) awakeFromNib{
     //data
@@ -59,7 +60,6 @@
     [self refreshList];
     
     //wrap the selector in a function that handles cycling through images/get new
-    //if number of images left to be cycled through is  > 4
     //set up timer
     Timer = [NSTimer scheduledTimerWithTimeInterval:1200.0
                                      target:self
@@ -101,12 +101,6 @@
     }
     //empty deletion pile
     [toBeDeleted removeAllObjects];
-    
-    //needs to have access to config data
-    //for each subreddit on the list
-    //needs to pull from reddit
-    
-    //needs to save those images to disk
     
     //Make the reddit calls to buld up list of images
     //Need to expand to multiple subreddits
@@ -390,5 +384,8 @@ NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData o
     return nil;
 }
 
-
+-(void) resetSubreddits
+{
+    //subreddits
+}
 @end

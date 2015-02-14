@@ -16,14 +16,38 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="132"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-9t-kkI">
+                        <rect key="frame" x="160" y="84" width="4" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="NZD-Px-9zy">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPO-2p-AQ9">
+                        <rect key="frame" x="73" y="100" width="335" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please Enter your Subreddits, Separated by a comma" id="1VV-fX-Inw">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJe-ua-b8N">
+                        <rect key="frame" x="75" y="59" width="331" height="28"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="3kV-Ad-NYd">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGj-Ug-9DW">
-                        <rect key="frame" x="166" y="13" width="148" height="32"/>
+                        <rect key="frame" x="166" y="14" width="148" height="32"/>
                         <buttonCell key="cell" type="push" title="Save Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KZU-jT-nZe">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -32,35 +56,12 @@
                             </connections>
                         </buttonCell>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-9t-kkI">
-                        <rect key="frame" x="160" y="222" width="132" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Each on it's own line" id="NZD-Px-9zy">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPO-2p-AQ9">
-                        <rect key="frame" x="148" y="238" width="184" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please Enter your Subreddits" id="1VV-fX-Inw">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJe-ua-b8N">
-                        <rect key="frame" x="116" y="66" width="221" height="138"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="3kV-Ad-NYd">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+            <point key="canvasLocation" x="253" y="115"/>
         </window>
     </objects>
 </document>

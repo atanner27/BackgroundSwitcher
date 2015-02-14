@@ -14,10 +14,12 @@
     NSStatusItem * statusItem;
     NSImage * statusImage;
     NSImage * statusHighlightImage;
+    NSMutableArray * subreddits;
     
 }
 
 -(int)getRandomNumberBetween:(int)from to:(int)to;
++(void) resetSubreddits;
 -(void)setWallpaper:(NSURL *) imageUrl;
 -(NSURL*) getFileUrl:(NSString *) fileName;
 -(void)wallpaperTimer;

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "-callReddit:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-giveRandomImage"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-setWallpaper:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-setWallpaper:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-wallpaperTimer"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "-changeSubreddits:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,23 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "-changeSubreddits:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
@@ -134,15 +118,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/AppDelegate.m"
+            timestampString = "445573088.796485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-changeSubreddits:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "-applicationDidFinishLaunching:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-applicationWillTerminate:"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "-applicationDidFinishLaunching:"
             landmarkType = "5">
          </BreakpointContent>
@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
@@ -214,15 +214,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
-            timestampString = "443223215.406764"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "-saveClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/Utility.m"
-            timestampString = "443680791.075762"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "+readFromConfig"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,13 +250,205 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSwitcherMac/AppDelegate.m"
-            timestampString = "443680607.436332"
+            timestampString = "445573088.796485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-awakeFromNib"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "443749831.293062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-windowDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "443749835.871524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-saveClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/Utility.m"
+            timestampString = "445573088.796485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "+writeToConfig:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/Utility.m"
+            timestampString = "445568609.596941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "+writeToConfig:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/Utility.m"
+            timestampString = "445569797.636992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "+writeToConfig:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "445570428.823148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-saveClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "445570688.360317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-saveClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "445572282.552903"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-saveClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/AppDelegate.m"
+            timestampString = "445572561.09369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "window"
+            landmarkType = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/AppDelegate.m"
+            timestampString = "445572562.466874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "window"
+            landmarkType = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "445573078.00363"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-saveClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackgroundSwitcherMac/OptionsWindowController.m"
+            timestampString = "445574737.801624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "@implementation OptionsWindowController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

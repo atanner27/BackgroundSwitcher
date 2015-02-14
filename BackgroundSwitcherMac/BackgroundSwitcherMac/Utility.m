@@ -16,7 +16,7 @@
     NSString *fileName = @"config.txt";
     //NSString *imgURL = url;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:filePath];
+    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:fileName];
     
     if(![fileManager fileExistsAtPath:filePath]){
         // file doesn't exist
@@ -30,7 +30,23 @@
         NSLog(@"file exists");
     }
     //write your items
+    //split the string
+    NSArray * options = [rawInput componentsSeparatedByString:@","];
+    NSFileHandle *myHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
     //for every item
+    for(NSString * line in options)
+    {
+        NSString *trimmedString = [line stringByTrimmingCharactersInSet:
+                                   [NSCharacterSet whitespaceCharacterSet]];
+        [trimmedString stringByAppendingString:@"\n"];
+        //[trimmedString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        [myHandle writeData:[trimmedString dataUsingEncoding:NSUTF8StringEncoding]];
+        [myHandle seekToEndOfFile];
+        
+    }
+    
+    /*NSString *trimmedString = [string stringByTrimmingCharactersInSet:
+     [NSCharacterSet whitespaceCharacterSet]];*/
     //[@"spaceporn" writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
